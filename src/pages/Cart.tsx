@@ -1,7 +1,7 @@
-import {useSelector} from 'react-redux';
-import {useDispatch} from 'react-redux';
-import {removeFromCart} from 'src/features/cart/cartSlice';
-import {item} from '~types/item';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { removeFromCart } from 'src/features/cart/cartSlice';
+import { product } from '~types/product';
 import Styles from './Cart.module.css';
 
 
@@ -10,7 +10,7 @@ const Cart = () => {
   console.log(cart);
   const dispatch = useDispatch();
 
-  const handleRemoveFromCart = (item: item) => {
+  const handleRemoveFromCart = (item: product) => {
     dispatch(removeFromCart(item));
   }
 
@@ -21,7 +21,7 @@ const Cart = () => {
       <p><b>Total:</b> {cart.value} $</p>
 
       <div className={Styles.list}>
-        {cart.items.map((item: item) => (
+        {cart.items.map((item: product) => (
           <div key={item.id}>
             <h2>{item.name}</h2>
             <img alt={item.name} src={item.image} className={Styles.image}/>
