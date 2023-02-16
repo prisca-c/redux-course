@@ -3,12 +3,8 @@ import Styles from './Navbar.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from 'react-redux';
-import { useState } from 'react';
 
 const Navbar = () => {
-  const isActive = (path: string) => {
-    return window.location.pathname === path;
-  }
 
   const itemsCount = useSelector((state: any) => state.cart.itemsCount);
 
