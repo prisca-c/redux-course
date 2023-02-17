@@ -1,9 +1,9 @@
-import { product } from '~types/product';
+import { Product } from '~types/Product';
 import Styles from './ProductItem.module.css';
 import { addToCart } from 'src/features/cart/cartSlice';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 
-const ProductItem = (props: product) => {
+const ProductItem = (props: Product) => {
   const dispatch = useAppDispatch();
   const cart = useAppSelector((state: any) => state.cart);
   const lastItem = cart.items[cart.items.length - 1];

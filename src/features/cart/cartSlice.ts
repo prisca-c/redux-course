@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { cart } from '~types/cart';
+import { Cart } from '~types/Cart';
 
-const initialState: cart = {
+const initialState: Cart = {
   id: 0,
   value: 0,
   items: [],
