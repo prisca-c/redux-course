@@ -1,14 +1,14 @@
 import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
 import { removeFromCart } from 'src/features/cart/cartSlice';
 import { product } from '~types/product';
 import Styles from './Cart.module.css';
+import { useAppDispatch } from '../app/hooks';
 
 
 const Cart = () => {
   const cart = useSelector((state: any) => state.cart);
   console.log(cart);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const handleRemoveFromCart = (item: product) => {
     dispatch(removeFromCart(item));
